@@ -11,17 +11,31 @@ body {
     font: 17px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif;
     display: flex; justify-content: center; align-items: center; min-height: 100vh;
 }
-main { text-align: center; padding: 20px; }
-h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #ffffff; }
+main { text-align: center; padding: 40px 20px; }
+h1 { font-size: 2.5rem; margin-bottom: 0.2rem; color: #ffcc4d; }
 p { color: #aab4c8; margin-bottom: 3rem; }
-.menu { display: flex; flex-direction: column; gap: 15px; }
-a {
-    display: block; padding: 15px 30px; text-decoration: none;
-    background: #151d33; color: #e9edf7; border-radius: 8px;
-    border: 1px solid #2a3650; transition: all 0.2s; font-weight: bold;
+.apps-grid { 
+    display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; 
 }
-a:hover { background: #2a3650; border-color: #8fc8ff; }
-.subtitle { font-size: 0.9rem; color: #aab4c8; font-weight: normal; display: block; margin-top: 5px; }
+.app-card {
+    display: flex; flex-direction: column; align-items: center;
+    text-decoration: none; transition: transform 0.2s ease;
+}
+.app-card:hover {
+    transform: translateY(-8px);
+}
+.app-card img {
+    width: 140px; height: 140px; border-radius: 28px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+    border: 2px solid transparent; transition: border 0.2s ease;
+}
+.app-card:hover img {
+    border-color: #4fe0c1; /* Mint accent on hover */
+}
+.app-name {
+    margin-top: 15px; color: #e9edf7; font-weight: 600; font-size: 1.1rem;
+    background: #151d33; padding: 5px 15px; border-radius: 20px;
+}
 </style>
 </head>
 <body>
@@ -29,17 +43,18 @@ a:hover { background: #2a3650; border-color: #8fc8ff; }
     <h1>Azarette</h1>
     <p>Indie Game Developer</p>
     
-    <div class="menu">
-        <a href="sudoku3.html">
-            Sudoku³
-            <span class="subtitle">Privacy Policy</span>
+    <div class="apps-grid">
+        <!-- Sudoku³ -->
+        <a href="sudoku3.html" class="app-card">
+            <img src="sudoku_icon.png" alt="Sudoku³ Icon">
+            <span class="app-name">Sudoku³</span>
         </a>
-        <!-- Aquí puedes añadir más juegos en el futuro, por ejemplo:
-        <a href="terrarush.html">
-            TerraRush
-            <span class="subtitle">Privacy Policy</span>
+        
+        <!-- TerraRush -->
+        <a href="terrarush.html" class="app-card">
+            <img src="terrarush_icon.png" alt="TerraRush Icon">
+            <span class="app-name">TerraRush</span>
         </a>
-        -->
     </div>
 </main>
 </body>
